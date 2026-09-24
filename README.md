@@ -74,6 +74,8 @@ npm run lint
 
 ESLint is also run automatically in CI on pull requests to `main`.
 
+Coding standards are documented in the [Copilot instructions](.github/copilot-instructions.md) and the focused [instruction files](.github/instructions/). In particular, comments should explain intent rather than restate code, exported data-layer functions require TSDoc/JSDoc for their purpose, parameters, and return values, and reusable Astro components must document their `Props` contract. TypeScript files use two-space indentation, single quotes, semicolons, and trailing commas in multiline expressions; ESLint enforces the quote, semicolon, and trailing-comma conventions.
+
 ## Type checking
 
 The project runs on **TypeScript 7** (the native Go compiler, `tsgo`) for type checking, adopted side-by-side via the [`@typescript/native-preview`](https://www.npmjs.com/package/@typescript/native-preview) package. The classic `typescript` package is intentionally kept at v6 so ESLint + `typescript-eslint` and `astro check` keep working unchanged — TypeScript 7's programmatic API isn't ready for those tools yet.
